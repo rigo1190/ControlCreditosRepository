@@ -226,6 +226,7 @@
     <Content Include="Formas\Catalogos\Municipios.aspx" />
     <Content Include="Default.aspx" />
     <Content Include="favicon.ico" />
+    <Content Include="Formas\Creditos\Lista.aspx" />
     <Content Include="Global.asax" />
     <Content Include="img\cge.jpg" />
     <Content Include="img\close.png" />
@@ -334,6 +335,13 @@
     <Compile Include="Formas\Catalogos\Municipios.aspx.designer.cs">
       <DependentUpon>Municipios.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Formas\Creditos\Lista.aspx.cs">
+      <DependentUpon>Lista.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Formas\Creditos\Lista.aspx.designer.cs">
+      <DependentUpon>Lista.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -436,11 +444,11 @@
     <VisualStudio>
       <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
         <WebProjectProperties>
-          <UseIIS>False</UseIIS>
+          <UseIIS>True</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>7918</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:7918/</IISUrl>
+          <IISUrl>http://localhost:7920/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

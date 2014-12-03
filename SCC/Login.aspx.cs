@@ -50,7 +50,8 @@ namespace SCC
 
 
                         Session["EjercicioId"] = ejercicioActivoId;
-                        Response.Redirect("~/Formas/Catalogos/Municipios.aspx");
+                        Session["MunicipioId"] = 3;
+                        Response.Redirect("~/Formas/Creditos/Lista.aspx");
                         
 
                         //switch (user.RolId) 
