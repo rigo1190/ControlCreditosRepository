@@ -1,0 +1,39 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="MLogin.master.cs" Inherits="SCC.MLogin" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head id="Head1" runat="server">
+
+   
+    <title>Secretaría de Finanzas y Planeación</title>
+
+      <%: Scripts.Render("~/bundles/jquery") %>
+      <%: Scripts.Render("~/bundles/bootstrap") %>
+      <%: Styles.Render("~/Content/css") %> 
+      <%: Styles.Render("~/Content/themes/base/css") %>         
+        
+    <asp:ContentPlaceHolder ID="HeadContent" runat="server">
+    </asp:ContentPlaceHolder>
+
+</head>
+<body>
+    <form id="Form1" runat="server">
+        <div id="contenedor" class="page">
+            <div id="encabezado" class="header">
+                <div style="text-align:center">
+                        <div style="clear:both"></div>
+                </div>
+            </div>
+            <div id="contenido" class="main">
+                <asp:ContentPlaceHolder ID="MainContent" runat="server"/>
+            </div>
+ 
+            <div id="pie" class="footer">
+            </div>
+
+        </div>
+        
+    </form>
+</body>
+</html>
+
