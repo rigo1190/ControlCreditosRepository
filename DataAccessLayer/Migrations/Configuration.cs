@@ -90,13 +90,7 @@ namespace DataAccessLayer.Migrations
                new Fideicomisos { Id=1, Clave = "001", Nombre = "Fideicomiso A",Status=1}
            );
 
-           context.DBStiposdecreditos.AddOrUpdate(
-               new TiposDeCredito { Id=1,Clave="ED",Nombre="ESTATAL DIRECTA"},
-               new TiposDeCredito { Id=2,Clave="BE2006",Nombre="BURSATILIZACIÓN ESTATAL 2006"},
-               new TiposDeCredito { Id=3,Clave="BE2012",Nombre="BURSATILIZACIÓN ESTATAL 2012"},
-               new TiposDeCredito { Id=4,Clave="BM2008",Nombre="BURSTILIZACIÓN MUNICIPAL 2008"},
-               new TiposDeCredito { Id=5,Clave="FAIS",Nombre="FONDO DE APORTACIONES PARA LA INFRAESTRUCTURA SOCIAL"}
-           );
+           
 
            context.DBSfirmas.AddOrUpdate(
             new Firmas { Id=1,Tesorero ="LIC. ANTONIO TAREK ABDALA SAAD", SubdirectorDeRegistroYControl ="C.P. LUIS ENRIQUE GUERRERO OLVERA", JefeDeptoOrdenesDePago="C.P. JOAQUÍN SZYMANSKI VARONA"}

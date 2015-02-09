@@ -64,7 +64,6 @@
     <Compile Include="Models\Generica.cs" />
     <Compile Include="Models\Municipio.cs" />
     <Compile Include="Models\Rol.cs" />
-    <Compile Include="Models\TiposDeCredito.cs" />
     <Compile Include="Models\UnidadPresupuestal.cs" />
     <Compile Include="Models\Usuario.cs" />
     <Compile Include="Models\UsuarioRol.cs" />

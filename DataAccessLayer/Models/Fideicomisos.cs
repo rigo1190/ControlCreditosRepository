@@ -10,6 +10,10 @@ namespace DataAccessLayer.Models
 {
     public class Fideicomisos:Generica
     {
+        public Fideicomisos()
+        {
+            this.detalleCreditos = new HashSet<Creditos>();
+        }
 
         [Index(IsUnique = true)]
         [StringLength(50, ErrorMessage = "El campo {0} debe contener un máximo de {1} caracteres")]
@@ -21,6 +25,6 @@ namespace DataAccessLayer.Models
         public int Status { get; set; }
 
 
-
+        public virtual ICollection<Creditos> detalleCreditos { get; set; }
     }
 }

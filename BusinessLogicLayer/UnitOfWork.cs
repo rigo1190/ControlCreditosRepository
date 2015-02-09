@@ -23,8 +23,7 @@ namespace BusinessLogicLayer
 
         private IBusinessLogic<Financieras> financierasBL;
         private IBusinessLogic<Fideicomisos> fideicomisosBL;
-        private IBusinessLogic<TiposDeCredito> tiposdecreditosBL;
-        private IBusinessLogic<Firmas> firmasBL;
+                private IBusinessLogic<Firmas> firmasBL;
         private IBusinessLogic<PeriodosDeAmortizacion> periodosdeamortizacionBL;
         private IBusinessLogic<UnidadPresupuestal> unidadpresupuestalBL;
         private IBusinessLogic<Departamentos> departamentosBL;
@@ -164,17 +163,7 @@ namespace BusinessLogicLayer
             }
         }
 
-        public IBusinessLogic<TiposDeCredito> TiposDeCreditoBL
-        {
-            get
-            {
-                if (this.tiposdecreditosBL == null)
-                {
-                    this.tiposdecreditosBL = new GenericBusinessLogic<TiposDeCredito>(contexto);
-                }
-                return this.tiposdecreditosBL;
-            }
-        }
+         
 
 
         public IBusinessLogic<Firmas> FirmasBL
