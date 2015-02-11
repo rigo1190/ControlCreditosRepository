@@ -39,6 +39,7 @@ namespace DataAccessLayer.Models
         public decimal Importe { get; set; }
 
 
+        public virtual Creditos Credito { get; set; }
         public virtual UnidadPresupuestal UnidadPresupuestal { get; set; }
         public virtual Departamentos Departamento { get; set; }
 
