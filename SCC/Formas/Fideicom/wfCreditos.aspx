@@ -80,7 +80,7 @@
 
                     <asp:TemplateField HeaderText="N Periodos" SortExpression="N Periodos">                    
                         <ItemTemplate>                            
-                                <asp:Label ID="lblPeriodo" runat="server" Text='<%# Bind("PeriodoDeAmortizacion.Nombre") %>'></asp:Label>
+                                <asp:Label ID="lblNPeriodo" runat="server" Text='<%# Bind("NPeriodos") %>'></asp:Label>
                         </ItemTemplate>
                     </asp:TemplateField>
 
