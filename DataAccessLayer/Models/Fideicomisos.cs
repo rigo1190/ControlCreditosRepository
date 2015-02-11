@@ -15,6 +15,8 @@ namespace DataAccessLayer.Models
             this.detalleCreditos = new HashSet<Creditos>();
         }
 
+        public int FinancieraId { get; set; }
+
         [Index(IsUnique = true)]
         [StringLength(50, ErrorMessage = "El campo {0} debe contener un máximo de {1} caracteres")]
         public string Clave { get; set; }
@@ -24,7 +26,7 @@ namespace DataAccessLayer.Models
 
         public int Status { get; set; }
 
-
+        public virtual Financieras Financiera { get; set; }
         public virtual ICollection<Creditos> detalleCreditos { get; set; }
     }
 }

@@ -14,7 +14,7 @@ namespace DataAccessLayer.Models
 
         public int? MunicipioId { get; set; }
 
-        public int? FinancieraId { get; set; }
+        
 
         [StringLength(50, ErrorMessage = "El campo {0} debe contener un máximo de {1} caracteres")]
         public string NumeroDeContrato { get; set; }
@@ -46,7 +46,7 @@ namespace DataAccessLayer.Models
 
         public virtual Municipio Municipio { get; set; }
 
-        public virtual Financieras Financiera { get; set; }
+        
 
         public virtual PeriodosDeAmortizacion PeriodoDeAmortizacion { get; set; }
 

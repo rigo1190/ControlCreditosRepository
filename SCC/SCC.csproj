@@ -226,6 +226,8 @@
     <Content Include="Formas\Catalogos\Municipios.aspx" />
     <Content Include="Default.aspx" />
     <Content Include="favicon.ico" />
+    <Content Include="Formas\Fideicom\wfCreditos.aspx" />
+    <Content Include="Formas\Fideicom\wfFideicomisos.aspx" />
     <Content Include="Formas\opCreditos\Lista.aspx" />
     <Content Include="Global.asax" />
     <Content Include="img\cge.jpg" />
@@ -334,6 +336,20 @@
     </Compile>
     <Compile Include="Formas\Catalogos\Municipios.aspx.designer.cs">
       <DependentUpon>Municipios.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Formas\Fideicom\wfCreditos.aspx.cs">
+      <DependentUpon>wfCreditos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Formas\Fideicom\wfCreditos.aspx.designer.cs">
+      <DependentUpon>wfCreditos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Formas\Fideicom\wfFideicomisos.aspx.cs">
+      <DependentUpon>wfFideicomisos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Formas\Fideicom\wfFideicomisos.aspx.designer.cs">
+      <DependentUpon>wfFideicomisos.aspx</DependentUpon>
     </Compile>
     <Compile Include="Formas\opCreditos\Lista.aspx.cs">
       <DependentUpon>Lista.aspx</DependentUpon>

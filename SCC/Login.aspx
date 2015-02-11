@@ -34,7 +34,7 @@
          
         <div class="container">
 
-             <div class="well text-center"><h3>Sistema de Control de Créditos</h3></div>     
+             <div class="well text-center"><h3>Sistema de Control de Fideicomisos</h3></div>     
             
             <div class="form-group">
                  <img class="img-circle center-block" src="<%= ResolveClientUrl("~/img/photo.png")%>" alt="" />
