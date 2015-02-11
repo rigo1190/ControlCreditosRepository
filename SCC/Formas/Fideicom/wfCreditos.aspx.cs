@@ -72,7 +72,32 @@ namespace SCC.Formas.Fideicom
 
         protected void imgBtnEdit_Click(object sender, ImageClickEventArgs e)
         {
+            GridViewRow row = (GridViewRow)((ImageButton)sender).NamingContainer;
+            _ElId.Text = grid.DataKeys[row.RowIndex].Values["Id"].ToString();
+            _Accion.Text = "Modify";
 
+            Creditos credito = uow.CreditosBL.GetByID(int.Parse(_ElId.Text));
+
+            txtNumContrato.Value = credito.NumeroDeContrato;
+            dtpContrato.Value = String.Format("{0:d}", credito.FechaDelContrato); 
+            txtImporteTotal.Value = credito.ImporteContratado.ToString();
+            txtDestino.Value = credito.DestinoDelCredito;
+
+            DDLmunicipio.SelectedValue = credito.MunicipioId.ToString();
+            ddlPeriodoAmortizacion.SelectedValue = credito.PeriodoDeAmortizacionId.ToString();
+            txtNPeriodos.Value = credito.NPeriodos.ToString();
+            dtpInicio.Value = String.Format("{0:d}", credito.Inicio);
+            dtpTermino.Value = String.Format("{0:d}", credito.Termino); 
+
+            txtTasa.Value = credito.TasaNormal.ToString();
+            txtTasaMoratoria.Value = credito.TasaMoratoria.ToString();
+            txtPlazoInversion.Value = credito.PlazoDeInversion;
+            txtPlazoGracia.Value = credito.PeriodoDeGracia;
+
+
+            divDatos.Style.Add("display", "none");
+            divCaptura.Style.Add("display", "block");
+            divMSG.Style.Add("display", "none");
         }
 
         protected void imgBtnEliminar_Click(object sender, ImageClickEventArgs e)
@@ -157,6 +182,13 @@ namespace SCC.Formas.Fideicom
 
 
 
+        }
+
+        protected void btnCancelar_Click(object sender, EventArgs e)
+        {
+            divDatos.Style.Add("display", "block");
+            divMSG.Style.Add("display", "none");
+            divCaptura.Style.Add("display", "none");
         }
     }
 }

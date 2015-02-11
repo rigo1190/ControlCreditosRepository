@@ -228,7 +228,6 @@
     <Content Include="favicon.ico" />
     <Content Include="Formas\Fideicom\wfCreditos.aspx" />
     <Content Include="Formas\Fideicom\wfFideicomisos.aspx" />
-    <Content Include="Formas\opCreditos\Lista.aspx" />
     <Content Include="Global.asax" />
     <Content Include="img\cge.jpg" />
     <Content Include="img\close.png" />
@@ -350,13 +349,6 @@
     </Compile>
     <Compile Include="Formas\Fideicom\wfFideicomisos.aspx.designer.cs">
       <DependentUpon>wfFideicomisos.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Formas\opCreditos\Lista.aspx.cs">
-      <DependentUpon>Lista.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Formas\opCreditos\Lista.aspx.designer.cs">
-      <DependentUpon>Lista.aspx</DependentUpon>
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>

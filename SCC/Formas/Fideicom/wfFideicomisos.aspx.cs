@@ -21,7 +21,8 @@ namespace SCC.Formas.Fideicom
             {
                 BindGrid();
                 BindCombos();
-                divCaptura.Style.Add("display","none");                
+                divCaptura.Style.Add("display","none");
+                divMSG.Style.Add("display","none");
             }
 
         }
@@ -104,7 +105,7 @@ namespace SCC.Formas.Fideicom
                 BindGrid();
                 divDatos.Style.Add("display", "block");
                 divCaptura.Style.Add("display", "none");
-
+                divMSG.Style.Add("display", "none");
             }
 
             else
@@ -189,7 +190,7 @@ namespace SCC.Formas.Fideicom
 
                 divDatos.Style.Add("display", "block");
                 divCaptura.Style.Add("display", "none");
-
+                divMSG.Style.Add("display", "none");
 
             }
             else
@@ -208,6 +209,7 @@ namespace SCC.Formas.Fideicom
         protected void btnCancelar_Click(object sender, EventArgs e)
         {
             divDatos.Style.Add("display", "block");
+            divMSG.Style.Add("display", "none");
             divCaptura.Style.Add("display", "none");
         }
 

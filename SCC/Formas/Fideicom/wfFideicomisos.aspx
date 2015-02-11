@@ -60,12 +60,13 @@
 
     </div>
 
+    <div class="panel-footer alert alert-danger" id="divMSG" style="display:none" runat="server">
+        <asp:Label ID="lblMSG" runat="server" Text=""></asp:Label>
+    </div>
  
     <div id="divCaptura" runat="server" class="panel panel-success">
 
-                    <div class="panel-footer alert alert-danger" id="divMSG" style="display:none" runat="server">
-                                <asp:Label ID="lblMSG" runat="server" Text=""></asp:Label>
-                    </div>
+                    
                             
                     <div class="panel-heading">
                         <h3 class="panel-title">Fideicomisos</h3>

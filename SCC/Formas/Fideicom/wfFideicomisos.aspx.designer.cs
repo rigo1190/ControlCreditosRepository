@@ -40,15 +40,6 @@ namespace SCC.Formas.Fideicom {
         protected global::System.Web.UI.WebControls.GridView grid;
         
         /// <summary>
-        /// divCaptura control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl divCaptura;
-        
-        /// <summary>
         /// divMSG control.
         /// </summary>
         /// <remarks>
@@ -65,6 +56,15 @@ namespace SCC.Formas.Fideicom {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblMSG;
+        
+        /// <summary>
+        /// divCaptura control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl divCaptura;
         
         /// <summary>
         /// txtClave control.

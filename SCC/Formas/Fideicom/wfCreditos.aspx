@@ -2,6 +2,13 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 <script type="text/javascript">
 
+
+    $(document).ready(function () {
+        $('.campoNumerico').autoNumeric('init');
+    });
+
+
+
     function fnc_Confirmar() {
         return confirm("¿Está seguro de eliminar el registro?");
     }
@@ -16,7 +23,13 @@
 
     <div id="divDatos" runat="server" class="panel panel-success">
         <div class="panel-heading">
-            <h3 class="panel-title">Créditos </h3>
+            
+
+            <div class="row">
+                <div class="col-md-10"><h3 class="panel-title">Créditos</h3></div>                
+                <div class="col-md-2 text-center"><a href="<%=ResolveClientUrl("~/Formas/Fideicom/wfFideicomisos.aspx") %>" >Regresar</a></div>                
+
+             </div>   
         </div>
 
         
@@ -43,19 +56,31 @@
                                         
                     <asp:TemplateField HeaderText="Fecha del Contrato" SortExpression="Fecha del Contrato">                    
                         <ItemTemplate>                            
-                                <asp:Label ID="lblFecha" runat="server" Text='<%# Bind("FechaDelContrato") %>'></asp:Label>
+                                <asp:Label ID="lblFecha" runat="server" Text='<%# Bind("FechaDelContrato","{0:d}") %>'></asp:Label>
                         </ItemTemplate>
                     </asp:TemplateField>
      
                     <asp:TemplateField HeaderText="Importe Contratado" SortExpression="Importe Contratado">                    
                         <ItemTemplate>                            
-                                <asp:Label ID="lblImporte" runat="server" Text='<%# Bind("ImporteContratado") %>'></asp:Label>
+                                <asp:Label ID="lblImporte" runat="server" Text='<%# Bind("ImporteContratado","{0:C2}") %>'></asp:Label>
                         </ItemTemplate>
                     </asp:TemplateField>
 
                     <asp:TemplateField HeaderText="Municipio" SortExpression="Municipio">                    
                         <ItemTemplate>                            
                                 <asp:Label ID="lblMunicipio" runat="server" Text='<%# Bind("Municipio.Nombre") %>'></asp:Label>
+                        </ItemTemplate>
+                    </asp:TemplateField>
+
+                    <asp:TemplateField HeaderText="Periodo de Amortización" SortExpression="Periodo de Amortización">                    
+                        <ItemTemplate>                            
+                                <asp:Label ID="lblPeriodo" runat="server" Text='<%# Bind("PeriodoDeAmortizacion.Nombre") %>'></asp:Label>
+                        </ItemTemplate>
+                    </asp:TemplateField>
+
+                    <asp:TemplateField HeaderText="N Periodos" SortExpression="N Periodos">                    
+                        <ItemTemplate>                            
+                                <asp:Label ID="lblPeriodo" runat="server" Text='<%# Bind("PeriodoDeAmortizacion.Nombre") %>'></asp:Label>
                         </ItemTemplate>
                     </asp:TemplateField>
 
@@ -66,11 +91,13 @@
     </div>
 
 
+    <div class="panel-footer alert alert-danger" id="divMSG" style="display:none" runat="server">
+        <asp:Label ID="lblMSG" runat="server" Text=""></asp:Label>
+    </div>
+
      <div id="divCaptura" runat="server" class="panel panel-success">
 
-                    <div class="panel-footer alert alert-danger" id="divMSG" style="display:none" runat="server">
-                                <asp:Label ID="lblMSG" runat="server" Text=""></asp:Label>
-                    </div>
+
                             
                     <div class="panel-heading">
                         <h3 class="panel-title">Créditos</h3>
@@ -203,7 +230,8 @@
                     
                                                    
                         <div class="form-group"  id="divBtnGuardarCredito" runat="server">
-                            <asp:Button  CssClass="btn btn-primary" Text="Guardar Datos del Contrato" ID="btnGuardarContrato" runat="server" AutoPostBack="false" OnClick ="btnGuardarContrato_Click" ValidationGroup="validateX" />                        
+                            <asp:Button  CssClass="btn btn-primary" Text="Guardar" ID="btnGuardarContrato" runat="server" AutoPostBack="false" OnClick ="btnGuardarContrato_Click" ValidationGroup="validateX" />                        
+                            <asp:Button  CssClass="btn btn-default" Text="Cancelar" Id="btnCancelar" runat="server" OnClick ="btnCancelar_Click" AutoPostBack="false" />
                         </div>
                     </div>                        
 
