@@ -53,9 +53,11 @@
     <Compile Include="Models\AmortizacionesConceptos.cs" />
     <Compile Include="Models\Creditos.cs" />
     <Compile Include="Models\Departamentos.cs" />
+    <Compile Include="Models\DestinosDeFinanciamientos.cs" />
     <Compile Include="Models\Fideicomisos.cs" />
     <Compile Include="Models\Financieras.cs" />
     <Compile Include="Models\Firmas.cs" />
+    <Compile Include="Models\FuentesDeFinanciamientos.cs" />
     <Compile Include="Models\OpcionSistema.cs" />
     <Compile Include="Models\PeriodosDeAmortizacion.cs" />
     <Compile Include="Models\Permiso.cs" />

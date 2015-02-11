@@ -83,7 +83,7 @@ namespace SCC.Formas.Fideicom
             txtImporteTotal.Value = credito.ImporteContratado.ToString();
             txtDestino.Value = credito.DestinoDelCredito;
 
-            DDLmunicipio.SelectedValue = credito.MunicipioId.ToString();
+            //DDLmunicipio.SelectedValue = credito.MunicipioId.ToString();
             ddlPeriodoAmortizacion.SelectedValue = credito.PeriodoDeAmortizacionId.ToString();
             txtNPeriodos.Value = credito.NPeriodos.ToString();
             dtpInicio.Value = String.Format("{0:d}", credito.Inicio);
@@ -102,7 +102,49 @@ namespace SCC.Formas.Fideicom
 
         protected void imgBtnEliminar_Click(object sender, ImageClickEventArgs e)
         {
+            GridViewRow row = (GridViewRow)((ImageButton)sender).NamingContainer;
+            _ElId.Text = grid.DataKeys[row.RowIndex].Values["Id"].ToString();
 
+            Creditos Credito = uow.CreditosBL.GetByID(int.Parse(_ElId.Text));
+
+            uow.Errors.Clear();
+            List<Amortizaciones> lista;
+            lista = uow.AmortizacionesBL.Get(p => p.CreditoId == Credito.Id).ToList();
+
+
+            if (lista.Count > 0)
+                uow.Errors.Add("El registro no puede eliminarse porque ya ha sido usado en el sistema");
+
+
+
+            if (uow.Errors.Count == 0)
+            {
+                uow.CreditosBL.Delete(Credito);
+                uow.SaveChanges();
+            }
+
+
+            if (uow.Errors.Count == 0)
+            {
+                BindGrid();
+                divDatos.Style.Add("display", "block");
+                divCaptura.Style.Add("display", "none");
+                divMSG.Style.Add("display", "none");
+            }
+
+            else
+            {
+                string mensaje;
+
+                divMSG.Style.Add("display", "block");
+
+
+                mensaje = string.Empty;
+                foreach (string cad in uow.Errors)
+                    mensaje = mensaje + cad + "<br>";
+
+                lblMSG.Text = mensaje;
+            }
         }
 
         protected void btnGuardarContrato_Click(object sender, EventArgs e)
@@ -127,7 +169,7 @@ namespace SCC.Formas.Fideicom
             credito.ImporteContratado = decimal.Parse( txtImporteTotal.Value.ToString());
             credito.DestinoDelCredito = txtDestino.Value;
 
-            credito.MunicipioId = int.Parse(DDLmunicipio.SelectedValue.ToString());
+            //credito.MunicipioId = int.Parse(DDLmunicipio.SelectedValue.ToString());
             credito.PeriodoDeAmortizacionId = int.Parse(ddlPeriodoAmortizacion.SelectedValue.ToString());
             credito.NPeriodos = int.Parse( txtNPeriodos.Value.ToString());
             credito.Inicio = DateTime.Parse(dtpInicio.Value.ToString());

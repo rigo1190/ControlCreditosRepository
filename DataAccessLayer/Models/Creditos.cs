@@ -10,10 +10,16 @@ namespace DataAccessLayer.Models
 {
     public class Creditos:Generica
     {
+
+        public Creditos()
+        {
+            this.detalleAmortizaciones = new HashSet<Amortizaciones>();
+        }
         public int FideicomisoId { get; set; }
 
-        public int? MunicipioId { get; set; }
+        public int FuenteDeFinanciamientoId { get; set; }
 
+        public int DestinoDeFinanciamientoId { get; set; }
         
 
         [StringLength(50, ErrorMessage = "El campo {0} debe contener un máximo de {1} caracteres")]
@@ -44,13 +50,14 @@ namespace DataAccessLayer.Models
 
         public virtual Fideicomisos Fideicomiso { get;set;}
 
-        public virtual Municipio Municipio { get; set; }
+        public virtual FuentesDeFinanciamientos FuenteDeFinanciamiento { get; set; }
 
+        public virtual DestinosDeFinanciamientos DestinoDeFinanciamiento { get; set; }
         
 
         public virtual PeriodosDeAmortizacion PeriodoDeAmortizacion { get; set; }
 
-        
+        public virtual ICollection<Amortizaciones> detalleAmortizaciones { get; set; }
 
     }
 }

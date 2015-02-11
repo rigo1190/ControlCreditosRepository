@@ -82,9 +82,9 @@ namespace DataAccessLayer.Migrations
             );
 
 
-           context.DBSfinancieras.AddOrUpdate(
-                new Financieras { Id=1,Clave="001",Nombre="FINTEGRA",Banco="BANCO DEL BAJIO, S.A. INSTITUCIÓN BANCARIA",CuentaBancaria ="599397",CLABE="030180599397703013"}                
-           );
+           //context.DBSfinancieras.AddOrUpdate(
+           //     new Financieras { Id=1,Clave="001",Nombre="FINTEGRA",Banco="BANCO DEL BAJIO, S.A. INSTITUCIÓN BANCARIA",CuentaBancaria ="599397",CLABE="030180599397703013"}                
+           //);
 
            context.DBSfideicomisos.AddOrUpdate(
                new Fideicomisos { Id=1, Clave = "001", Nombre = "Fideicomiso A",Status=1}

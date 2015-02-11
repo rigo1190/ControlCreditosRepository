@@ -23,7 +23,11 @@ namespace BusinessLogicLayer
 
         private IBusinessLogic<Financieras> financierasBL;
         private IBusinessLogic<Fideicomisos> fideicomisosBL;
-                private IBusinessLogic<Firmas> firmasBL;
+        private IBusinessLogic<FuentesDeFinanciamientos> fuentesdefinanciamientosBL;
+        private IBusinessLogic<DestinosDeFinanciamientos> destinosdefinanciamientosBL;
+
+
+        private IBusinessLogic<Firmas> firmasBL;
         private IBusinessLogic<PeriodosDeAmortizacion> periodosdeamortizacionBL;
         private IBusinessLogic<UnidadPresupuestal> unidadpresupuestalBL;
         private IBusinessLogic<Departamentos> departamentosBL;
@@ -163,7 +167,35 @@ namespace BusinessLogicLayer
             }
         }
 
-         
+
+
+        public IBusinessLogic<FuentesDeFinanciamientos> FuentesDeFinanciamientosBL
+        {
+
+            get
+            {
+                if (this.fuentesdefinanciamientosBL == null)
+                {
+                    this.fuentesdefinanciamientosBL = new GenericBusinessLogic<FuentesDeFinanciamientos>(contexto);
+                }
+
+                return this.fuentesdefinanciamientosBL;
+            }
+        }
+
+
+        public IBusinessLogic<DestinosDeFinanciamientos> DestinosDeFinanciamientosBL
+        { 
+            get 
+            { 
+                if (this.destinosdefinanciamientosBL == null){
+                    this.destinosdefinanciamientosBL = new GenericBusinessLogic<DestinosDeFinanciamientos>(contexto);
+                }
+                return this.destinosdefinanciamientosBL;
+            }             
+        }
+
+
 
 
         public IBusinessLogic<Firmas> FirmasBL

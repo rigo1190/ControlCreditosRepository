@@ -213,8 +213,6 @@ namespace SCC.Formas.Fideicom
             divCaptura.Style.Add("display", "none");
         }
 
-        #endregion
-
         protected void imgSubdetalle_Click(object sender, ImageClickEventArgs e)
         {
             GridViewRow row = (GridViewRow)((ImageButton)sender).NamingContainer;
@@ -222,7 +220,7 @@ namespace SCC.Formas.Fideicom
 
             Response.Redirect("wfCreditos.aspx");
         }
-
+        #endregion
 
     }
 }
