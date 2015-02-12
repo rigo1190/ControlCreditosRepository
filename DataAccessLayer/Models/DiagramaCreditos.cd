@@ -26,8 +26,8 @@
       <Property Name="Fideicomiso" />
       <Property Name="FuenteDeFinanciamiento" />
       <Property Name="DestinoDeFinanciamiento" />
-      <Property Name="PeriodoDeAmortizacion" />
       <Property Name="TipoDeMoneda" />
+      <Property Name="PeriodoDeAmortizacion" />
     </ShowAsAssociation>
   </Class>
   <Class Name="DataAccessLayer.Models.Amortizaciones">
@@ -128,7 +128,7 @@
       </Path>
     </AssociationLine>
     <TypeIdentifier>
-      <HashCode>CAAAAAAAAAAAAAAAAAIBAAAAAAAAAAAAAQIAAAABAAA=</HashCode>
+      <HashCode>CAAAAAAAAAAAAAAAAAIBAAAAAAABAAAAAQAAAAABAAA=</HashCode>
       <FileName>Models\TablaAmortizaciones.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
