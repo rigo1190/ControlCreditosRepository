@@ -226,6 +226,7 @@
     <Content Include="Formas\Catalogos\Municipios.aspx" />
     <Content Include="Default.aspx" />
     <Content Include="favicon.ico" />
+    <Content Include="Formas\Fideicom\wfAmortizaciones.aspx" />
     <Content Include="Formas\Fideicom\wfCreditos.aspx" />
     <Content Include="Formas\Fideicom\wfFideicomisos.aspx" />
     <Content Include="Global.asax" />
@@ -335,6 +336,13 @@
     </Compile>
     <Compile Include="Formas\Catalogos\Municipios.aspx.designer.cs">
       <DependentUpon>Municipios.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Formas\Fideicom\wfAmortizaciones.aspx.cs">
+      <DependentUpon>wfAmortizaciones.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Formas\Fideicom\wfAmortizaciones.aspx.designer.cs">
+      <DependentUpon>wfAmortizaciones.aspx</DependentUpon>
     </Compile>
     <Compile Include="Formas\Fideicom\wfCreditos.aspx.cs">
       <DependentUpon>wfCreditos.aspx</DependentUpon>

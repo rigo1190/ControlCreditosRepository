@@ -66,11 +66,19 @@
                         </ItemTemplate>
                     </asp:TemplateField>
 
-                    <asp:TemplateField HeaderText="Municipio" SortExpression="Municipio">                    
+                    <asp:TemplateField HeaderText="Fuente de Financiamiento" SortExpression="Fuente de Financiamiento">                    
                         <ItemTemplate>                            
-                                <asp:Label ID="lblMunicipio" runat="server" Text='<%# Bind("Municipio.Nombre") %>'></asp:Label>
+                                <asp:Label ID="lblFuente" runat="server" Text='<%# Bind("FuenteDeFinanciamiento.Nombre") %>'></asp:Label>
                         </ItemTemplate>
                     </asp:TemplateField>
+
+                    <asp:TemplateField HeaderText="Destino de Financiamiento" SortExpression="Destino de Financiamiento">                    
+                        <ItemTemplate>                            
+                                <asp:Label ID="lblDestino" runat="server" Text='<%# Bind("DestinoDeFinanciamiento.Nombre") %>'></asp:Label>
+                        </ItemTemplate>
+                    </asp:TemplateField>
+
+
 
                     <asp:TemplateField HeaderText="Periodo de Amortización" SortExpression="Periodo de Amortización">                    
                         <ItemTemplate>                            
@@ -123,13 +131,34 @@
                             </div>
                           </div>                     
 
+                         <div class="form-group">
+                               <label for="tipoDeMoneda">Tipo de  Moneda</label>
+                             <div>
+                                <asp:DropDownList ID="ddlTipoDeMoneda" CssClass="form-control" runat="server"></asp:DropDownList>                            
+                            </div>
+                          </div>
+
+                         <div class="form-group">
+                               <label for="Cantidad">Cantidad</label>
+                             <div>
+                                <input type="text" class="input-sm required form-control campoNumerico" id="txtCantidad" runat="server" style="text-align: left; align-items:flex-start"/>
+                                <asp:RequiredFieldValidator ID="RequiredFieldValidator12" runat="server" ControlToValidate="txtCantidad" ErrorMessage="El campo cantidad es obligatorio" ValidationGroup="validateX">*</asp:RequiredFieldValidator>
+                            </div>
+                          </div>
+
+                          <div class="form-group">
+                               <label for="Valor">Valor Actual en $ del tipo de moneda</label>
+                             <div>
+                                <input type="text" class="input-sm required form-control campoNumerico" id="txtValor" runat="server" style="text-align: left; align-items:flex-start"/>
+                                <asp:RequiredFieldValidator ID="RequiredFieldValidator13" runat="server" ControlToValidate="txtValor" ErrorMessage="El campo valor es obligatorio" ValidationGroup="validateX">*</asp:RequiredFieldValidator>
+                            </div>
+                          </div>
+
 
                          <div class="form-group">
                                <label for="txtImporteTotal">Importe Contratado</label>
-                             <div class="input-group">
-                                <span class="input-group-addon">$</span>
-                                <input type="text" class="input-sm required form-control campoNumerico" id="txtImporteTotal" runat="server" style="text-align: left; align-items:flex-start"  />
-                                <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ControlToValidate="txtImporteTotal" ErrorMessage="El Importe es obligatorio" ValidationGroup="validateX">*</asp:RequiredFieldValidator>
+                             <div>                                
+                                <input type="text" disabled="disabled" class="input-sm required form-control campoNumerico" id="txtImporteTotal" runat="server" style="text-align: left; align-items:flex-start"  />                                
                             </div>
                           </div>
 
@@ -150,9 +179,16 @@
                       
 
                           <div class="form-group">
-                               <label for="Municipio">Municipio</label>
+                               <label for="Fuente">Fuente de Financiamiento</label>
                              <div>
-                                <asp:DropDownList ID="DDLmunicipio" CssClass="form-control" runat="server"></asp:DropDownList>                            
+                                <asp:DropDownList ID="ddlFuenteFinanciamiento" CssClass="form-control" runat="server"></asp:DropDownList>                            
+                            </div>
+                          </div>
+
+                          <div class="form-group">
+                               <label for="Destino">Destino de Financiamiento</label>
+                             <div>
+                                <asp:DropDownList ID="ddlDestinoFinanciamiento" CssClass="form-control" runat="server"></asp:DropDownList>                            
                             </div>
                           </div>
 
@@ -167,7 +203,7 @@
                          <div class="form-group">
                                <label for="NPeriodos">N Periodos</label>
                              <div>
-                                <input type="text" class="input-sm required form-control campoNumerico" id="txtNPeriodos" runat="server" style="text-align: left; align-items:flex-start"/>
+                                <input type="text" class="input-sm required form-control campoNumerico" id="txtNPeriodos" runat="server" style="text-align: left; align-items:flex-start" data-m-dec="0"/>
                                 <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="txtNPeriodos" ErrorMessage="El campo de N periodos es obligatorio" ValidationGroup="validateX">*</asp:RequiredFieldValidator>
                             </div>
                           </div>

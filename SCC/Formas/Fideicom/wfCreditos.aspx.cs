@@ -39,10 +39,20 @@ namespace SCC.Formas.Fideicom
         private void BindCombos()
         {
 
-            DDLmunicipio.DataSource = uow.MunicipioBL.Get().ToList();
-            DDLmunicipio.DataValueField = "Id";
-            DDLmunicipio.DataTextField = "Nombre";
-            DDLmunicipio.DataBind();
+            ddlTipoDeMoneda.DataSource = uow.TiposDeMonedasBL.Get().ToList();
+            ddlTipoDeMoneda.DataValueField = "Id";
+            ddlTipoDeMoneda.DataTextField = "Nombre";
+            ddlTipoDeMoneda.DataBind();
+
+            ddlFuenteFinanciamiento.DataSource = uow.FuentesDeFinanciamientosBL.Get().ToList();
+            ddlFuenteFinanciamiento.DataValueField = "Id";
+            ddlFuenteFinanciamiento.DataTextField = "Nombre";
+            ddlFuenteFinanciamiento.DataBind();
+
+            ddlDestinoFinanciamiento.DataSource = uow.DestinosDeFinanciamientosBL.Get().ToList();
+            ddlDestinoFinanciamiento.DataValueField = "Id";
+            ddlDestinoFinanciamiento.DataTextField = "Nombre";
+            ddlDestinoFinanciamiento.DataBind();
 
             ddlPeriodoAmortizacion.DataSource = uow.PeriodosDeAmortizacionBL.Get().ToList();
             ddlPeriodoAmortizacion.DataValueField = "Id";
@@ -59,6 +69,8 @@ namespace SCC.Formas.Fideicom
             _Accion.Text = "Nuevo";
 
             txtNumContrato.Value = string.Empty;
+            txtCantidad.Value = string.Empty;
+            txtValor.Value = string.Empty;
             txtImporteTotal.Value = string.Empty;
             txtDestino.Value = string.Empty;
 
@@ -79,11 +91,15 @@ namespace SCC.Formas.Fideicom
             Creditos credito = uow.CreditosBL.GetByID(int.Parse(_ElId.Text));
 
             txtNumContrato.Value = credito.NumeroDeContrato;
-            dtpContrato.Value = String.Format("{0:d}", credito.FechaDelContrato); 
+            dtpContrato.Value = String.Format("{0:d}", credito.FechaDelContrato);
+            ddlTipoDeMoneda.SelectedValue = credito.TipoDeMonedaId.ToString();
+            txtCantidad.Value = credito.CantidadContratada.ToString() ;
+            txtValor.Value = credito.ValorTipoMoneda.ToString();
             txtImporteTotal.Value = credito.ImporteContratado.ToString();
             txtDestino.Value = credito.DestinoDelCredito;
-
-            //DDLmunicipio.SelectedValue = credito.MunicipioId.ToString();
+            
+            ddlFuenteFinanciamiento.SelectedValue = credito.FuenteDeFinanciamientoId.ToString();
+            ddlDestinoFinanciamiento.SelectedValue = credito.DestinoDeFinanciamientoId.ToString(); 
             ddlPeriodoAmortizacion.SelectedValue = credito.PeriodoDeAmortizacionId.ToString();
             txtNPeriodos.Value = credito.NPeriodos.ToString();
             dtpInicio.Value = String.Format("{0:d}", credito.Inicio);
@@ -166,10 +182,14 @@ namespace SCC.Formas.Fideicom
             
             credito.NumeroDeContrato = txtNumContrato.Value;
             credito.FechaDelContrato = DateTime.Parse(dtpContrato.Value.ToString());
-            credito.ImporteContratado = decimal.Parse( txtImporteTotal.Value.ToString());
+            credito.TipoDeMonedaId = int.Parse(ddlTipoDeMoneda.SelectedValue.ToString());
+            credito.CantidadContratada = decimal.Parse(txtCantidad.Value.ToString());
+            credito.ValorTipoMoneda = decimal.Parse(txtValor.Value.ToString());
+            credito.ImporteContratado = credito.CantidadContratada * credito.ValorTipoMoneda;            
             credito.DestinoDelCredito = txtDestino.Value;
 
-            //credito.MunicipioId = int.Parse(DDLmunicipio.SelectedValue.ToString());
+            credito.FuenteDeFinanciamientoId = int.Parse(ddlFuenteFinanciamiento.SelectedValue.ToString());
+            credito.DestinoDeFinanciamientoId = int.Parse(ddlDestinoFinanciamiento.SelectedValue.ToString());
             credito.PeriodoDeAmortizacionId = int.Parse(ddlPeriodoAmortizacion.SelectedValue.ToString());
             credito.NPeriodos = int.Parse( txtNPeriodos.Value.ToString());
             credito.Inicio = DateTime.Parse(dtpInicio.Value.ToString());
