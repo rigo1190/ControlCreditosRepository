@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace DataAccessLayer.Models
 {
-    public class TablaAmortizaciones:Generica
+    public class CalendarioPagos:Generica
     {
         [Index("IX_Numero_CreditoId", 1, IsUnique = true)]
         public int Numero { get; set; }
