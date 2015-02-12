@@ -22,16 +22,16 @@ namespace BusinessLogicLayer
         private IBusinessLogic<Municipio> municipioBL;
 
         private IBusinessLogic<Financieras> financierasBL;
-        private IBusinessLogic<Fideicomisos> fideicomisosBL;
         private IBusinessLogic<FuentesDeFinanciamientos> fuentesdefinanciamientosBL;
         private IBusinessLogic<DestinosDeFinanciamientos> destinosdefinanciamientosBL;
-
-
         private IBusinessLogic<Firmas> firmasBL;
         private IBusinessLogic<PeriodosDeAmortizacion> periodosdeamortizacionBL;
         private IBusinessLogic<UnidadPresupuestal> unidadpresupuestalBL;
         private IBusinessLogic<Departamentos> departamentosBL;
+        private IBusinessLogic<TiposDeMonedas> tiposdemonedasBL;
+        private IBusinessLogic<ConceptosDePago> conceptosdepagosBL;
 
+        private IBusinessLogic<Fideicomisos> fideicomisosBL;
         private IBusinessLogic<Creditos> creditosBL;
         private IBusinessLogic<Amortizaciones> amortizacionesBL;
         private IBusinessLogic<AmortizacionesConceptos> amortizacionesconceptosBL;
@@ -154,18 +154,7 @@ namespace BusinessLogicLayer
             }
         }
 
-        public IBusinessLogic<Fideicomisos> FideicomisosBL
-        {
-            get
-            {
-                if (this.fideicomisosBL == null)
-                {
-                    this.fideicomisosBL = new GenericBusinessLogic<Fideicomisos>(contexto);
-                }
-
-                return this.fideicomisosBL;
-            }
-        }
+        
 
 
 
@@ -247,6 +236,45 @@ namespace BusinessLogicLayer
                 }
                 return this.departamentosBL;
             }        
+        }
+
+        public IBusinessLogic <TiposDeMonedas> TiposDeMonedasBL{
+            get{
+
+                if (this.tiposdemonedasBL == null){
+                    this.tiposdemonedasBL = new GenericBusinessLogic<TiposDeMonedas>(contexto);
+                }
+                return this.tiposdemonedasBL;
+            }
+        }
+
+        private IBusinessLogic<ConceptosDePago> ConceptosDePagoBL
+        {
+            get
+            {
+                if (this.conceptosdepagosBL == null)
+                {
+                    this.conceptosdepagosBL = new GenericBusinessLogic<ConceptosDePago>(contexto);
+                }
+                return this.conceptosdepagosBL;
+            }
+        }
+
+
+
+
+
+        public IBusinessLogic<Fideicomisos> FideicomisosBL
+        {
+            get
+            {
+                if (this.fideicomisosBL == null)
+                {
+                    this.fideicomisosBL = new GenericBusinessLogic<Fideicomisos>(contexto);
+                }
+
+                return this.fideicomisosBL;
+            }
         }
 
         public IBusinessLogic<Creditos> CreditosBL

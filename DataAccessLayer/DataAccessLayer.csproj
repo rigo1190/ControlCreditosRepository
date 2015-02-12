@@ -51,6 +51,7 @@
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Amortizaciones.cs" />
     <Compile Include="Models\AmortizacionesConceptos.cs" />
+    <Compile Include="Models\ConceptosDePago.cs" />
     <Compile Include="Models\Creditos.cs" />
     <Compile Include="Models\Departamentos.cs" />
     <Compile Include="Models\DestinosDeFinanciamientos.cs" />
@@ -66,6 +67,7 @@
     <Compile Include="Models\Generica.cs" />
     <Compile Include="Models\Municipio.cs" />
     <Compile Include="Models\Rol.cs" />
+    <Compile Include="Models\TiposDeMonedas.cs" />
     <Compile Include="Models\UnidadPresupuestal.cs" />
     <Compile Include="Models\Usuario.cs" />
     <Compile Include="Models\UsuarioRol.cs" />

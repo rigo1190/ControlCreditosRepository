@@ -72,17 +72,18 @@ namespace DataAccessLayer.Models
         public virtual DbSet<Municipio> Municipios { get; set; }
 
         public virtual DbSet<Financieras> DBSfinancieras { get; set; }
-
         public virtual DbSet<FuentesDeFinanciamientos> DBSfuentesdefinanciamientos { get; set; }
         public virtual DbSet<DestinosDeFinanciamientos> DBSdestinosdefinanciamientos { get; set; }
-
-        public virtual DbSet<Fideicomisos> DBSfideicomisos { get; set; }
         public virtual DbSet<Firmas> DBSfirmas { get; set; }
         public virtual DbSet<PeriodosDeAmortizacion> DBSperiodosdeamortizacion { get; set; }
         public virtual DbSet<UnidadPresupuestal> DBSunidadpresupuestal { get; set; }
         public virtual DbSet<Departamentos> DBSdepartamentos { get; set; }
+        public virtual DbSet<TiposDeMonedas> DBStiposdemonedas { get; set; }
+        public virtual DbSet<ConceptosDePago> DBSconceptosdepago { get; set; }
 
 
+
+        public virtual DbSet<Fideicomisos> DBSfideicomisos { get; set; }
         public virtual DbSet<Creditos> DBScreditos { get; set; }
         public virtual DbSet<Amortizaciones> DBSamortizaciones { get; set; }
 

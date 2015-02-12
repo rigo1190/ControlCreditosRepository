@@ -35,8 +35,12 @@ namespace DataAccessLayer.Models
         public string Instruccion { get; set; }
 
  
-        public string ConceptoDePago { get; set; }
+        public string DescripcionDelPago { get; set; }
+
+        public decimal Cantidad { get; set; }
+        public decimal Valor { get; set; }
         public decimal Importe { get; set; }
+
 
 
         public virtual Creditos Credito { get; set; }
