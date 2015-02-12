@@ -1,0 +1,112 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="DataAccessLayer.Models.Fideicomisos">
+    <Position X="1" Y="3.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAECAAAAAAAAAAAgAABAAAAAAEAAAAAAAAAEAA=</HashCode>
+      <FileName>Models\Fideicomisos.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Financiera" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="DataAccessLayer.Models.Creditos">
+    <Position X="5" Y="1.5" Width="2.5" />
+    <AssociationLine Name="Fideicomiso" Type="DataAccessLayer.Models.Fideicomisos" FixedFromPoint="true">
+      <Path>
+        <Point X="5" Y="4.125" />
+        <Point X="3" Y="4.125" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AgAFgCCAAAABAAAAAIAFKAEEAAAIQAQQQQAAAoAAAAA=</HashCode>
+      <FileName>Models\Creditos.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Fideicomiso" />
+      <Property Name="FuenteDeFinanciamiento" />
+      <Property Name="DestinoDeFinanciamiento" />
+      <Property Name="PeriodoDeAmortizacion" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="DataAccessLayer.Models.Amortizaciones">
+    <Position X="4.75" Y="8.25" Width="2.75" />
+    <AssociationLine Name="UnidadPresupuestal" Type="DataAccessLayer.Models.UnidadPresupuestal" FixedToPoint="true">
+      <Path>
+        <Point X="7.5" Y="11.562" />
+        <Point X="9.25" Y="11.562" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>CAAAEAAAAAIAAAIEAAEAEAgIAAAAAAAAAQEAAAFCAAA=</HashCode>
+      <FileName>Models\Amortizaciones.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="UnidadPresupuestal" />
+      <Property Name="Credito" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="DataAccessLayer.Models.AmortizacionesConceptos">
+    <Position X="0.75" Y="9.5" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAIAAAAAgAAAAAEAAEAAAAAAAAAAAAAAgAAAAAA=</HashCode>
+      <FileName>Models\AmortizacionesConceptos.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Amortizacion" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="DataAccessLayer.Models.PeriodosDeAmortizacion">
+    <Position X="10" Y="5.75" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAgAABAAAAAAAAAAAAAgAAEAA=</HashCode>
+      <FileName>Models\PeriodosDeAmortizacion.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DataAccessLayer.Models.UnidadPresupuestal">
+    <Position X="9.25" Y="9.75" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAABAAAAAAiAAAAAAAAAAAAAAAAAAAEAA=</HashCode>
+      <FileName>Models\UnidadPresupuestal.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DataAccessLayer.Models.Departamentos">
+    <Position X="13.75" Y="11" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAiAgAAAAAAAAAAAAAAAEAEAA=</HashCode>
+      <FileName>Models\Departamentos.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="UnidadPresupuestal" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="DataAccessLayer.Models.Financieras">
+    <Position X="0.5" Y="0.5" Width="3" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAEAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAEAA=</HashCode>
+      <FileName>Models\Financieras.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DataAccessLayer.Models.Firmas">
+    <Position X="14" Y="0.5" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAAAAAAAIAAAAAAAAAAAAAAAEAAAAAAAA=</HashCode>
+      <FileName>Models\Firmas.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DataAccessLayer.Models.FuentesDeFinanciamientos">
+    <Position X="10" Y="0.5" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAEAAAAAAAAAAAAgAABAAAAAAAAAAAAAAAAEAA=</HashCode>
+      <FileName>Models\FuentesDeFinanciamientos.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DataAccessLayer.Models.DestinosDeFinanciamientos">
+    <Position X="10" Y="3" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAEAAAAAAAAAAAAgAABAAAAAAAAAAAAAAAAEAA=</HashCode>
+      <FileName>Models\DestinosDeFinanciamientos.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
