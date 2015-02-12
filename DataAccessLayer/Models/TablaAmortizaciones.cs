@@ -1,9 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace DataAccessLayer.Models
 {
@@ -13,7 +9,7 @@ namespace DataAccessLayer.Models
         public int Numero { get; set; }
         public DateTime? FechaVencimiento { get; set; }
         public decimal ImporteAmortizado { get; set; }
-        public decimal Saldo { get; set; }
+        public decimal SaldoInsoluto { get; set; }
 
         [Index("IX_Consecutivo_CreditoId", 2)]
         public int CreditoId { get; set; }
