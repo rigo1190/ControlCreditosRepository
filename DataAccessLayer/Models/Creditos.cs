@@ -14,6 +14,7 @@ namespace DataAccessLayer.Models
         public Creditos()
         {
             this.detalleAmortizaciones = new HashSet<Amortizaciones>();
+            this.detalleTablaAmortizaciones = new HashSet<TablaAmortizaciones>();
         }
         public int FideicomisoId { get; set; }
 
@@ -65,6 +66,7 @@ namespace DataAccessLayer.Models
         public virtual PeriodosDeAmortizacion PeriodoDeAmortizacion { get; set; }
 
         public virtual ICollection<Amortizaciones> detalleAmortizaciones { get; set; }
+        public virtual ICollection<TablaAmortizaciones> detalleTablaAmortizaciones { get; set; }
 
     }
 }
