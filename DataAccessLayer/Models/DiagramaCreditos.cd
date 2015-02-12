@@ -117,7 +117,7 @@
       <FileName>Models\TiposDeMonedas.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="DataAccessLayer.Models.TablaAmortizaciones">
+  <Class Name="DataAccessLayer.Models.CalendarioPagos">
     <Position X="10" Y="8" Width="2.5" />
     <AssociationLine Name="Credito" Type="DataAccessLayer.Models.Creditos" FixedFromPoint="true" FixedToPoint="true">
       <Path>
@@ -129,7 +129,7 @@
     </AssociationLine>
     <TypeIdentifier>
       <HashCode>CAAAAAAAAAAAAAAAAAIBAAAAAAABAAAAAQAAAAABAAA=</HashCode>
-      <FileName>Models\TablaAmortizaciones.cs</FileName>
+      <FileName>Models\CalendarioPagos.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
       <Property Name="Credito" />
