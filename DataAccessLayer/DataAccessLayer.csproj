@@ -51,6 +51,7 @@
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Amortizaciones.cs" />
     <Compile Include="Models\AmortizacionesConceptos.cs" />
+    <Compile Include="Models\CalendarioPagos.cs" />
     <Compile Include="Models\ConceptosDePago.cs" />
     <Compile Include="Models\Creditos.cs" />
     <Compile Include="Models\Departamentos.cs" />
