@@ -9,7 +9,7 @@ using System.Web.UI.WebControls;
 
 namespace SCC.Formas.Catalogos
 {
-    public partial class Roles : System.Web.UI.Page
+    public partial class PeriodosAmortizacion : System.Web.UI.Page
     {
         private UnitOfWork uow;
         protected void Page_Load(object sender, EventArgs e)
@@ -22,58 +22,56 @@ namespace SCC.Formas.Catalogos
             }
         }
 
-
         private void BindGrid()
         {
-            gridRoles.DataSource = uow.RolBL.Get().ToList();
-            gridRoles.DataBind();
+            gridPerido.DataSource = uow.PeriodosDeAmortizacionBL.Get().ToList();
+            gridPerido.DataBind();
         }
-
 
         private void BindControles()
         {
-            int idTipo = Utilerias.StrToInt(_IDRol.Value);
+            int id= Utilerias.StrToInt(_IDPeriodo.Value);
 
-            Rol obj = uow.RolBL.GetByID(idTipo);
+            PeriodosDeAmortizacion obj = uow.PeriodosDeAmortizacionBL.GetByID(id);
 
             txtClave.Value = obj.Clave;
             txtDescripcion.Value = obj.Nombre;
+            txtNumero.Value = obj.NMeses.ToString();
 
         }
 
-        private bool ValidarEliminarTipo(Rol obj)
+        private bool ValidarEliminar(PeriodosDeAmortizacion obj)
         {
-            if (obj.SubRoles.Count() > 0)
+            if (obj.detalleCreditos.Count() > 0)
                 return false;
 
             return true;
         }
 
-        private bool ValidarInsercion(string clave, string nombre, Rol objRol = null)
+        private bool ValidarInsercion(string clave, string nombre, PeriodosDeAmortizacion objPeriodo = null)
         {
-            Rol obj = null;
+            PeriodosDeAmortizacion obj = null;
 
             if (clave.Trim().Equals(string.Empty))
                 return false;
 
-            if (objRol == null)
-                obj = uow.RolBL.Get(e => e.Clave.ToUpper().Trim() == clave.ToUpper().Trim() || e.Nombre.ToUpper().Trim() == nombre.ToUpper().Trim()).FirstOrDefault();
+            if (objPeriodo == null)
+                obj = uow.PeriodosDeAmortizacionBL.Get(e => e.Clave.ToUpper().Trim() == clave.ToUpper().Trim() || e.Nombre.ToUpper().Trim() == nombre.ToUpper().Trim()).FirstOrDefault();
             else
-                if (!clave.ToUpper().Trim().Equals(objRol.Clave.ToUpper().Trim()))
-                    obj = uow.RolBL.Get(e => e.Clave == clave).FirstOrDefault();
-                else if (!nombre.ToUpper().Trim().Equals(objRol.Nombre.ToUpper().Trim()))
-                    obj = uow.RolBL.Get(e => e.Nombre == nombre).FirstOrDefault();
+                if (!clave.ToUpper().Trim().Equals(objPeriodo.Clave.ToUpper().Trim()))
+                    obj = uow.PeriodosDeAmortizacionBL.Get(e => e.Clave == clave).FirstOrDefault();
+                else if (!nombre.ToUpper().Trim().Equals(objPeriodo.Nombre.ToUpper().Trim()))
+                    obj = uow.PeriodosDeAmortizacionBL.Get(e => e.Nombre == nombre).FirstOrDefault();
 
             return obj == null;
         }
-
-        protected void gridRoles_RowDataBound(object sender, GridViewRowEventArgs e)
+        protected void gridPerido_RowDataBound(object sender, GridViewRowEventArgs e)
         {
             if (e.Row.RowType == DataControlRowType.DataRow)
             {
                 ImageButton imgBtnEliminar = (ImageButton)e.Row.FindControl("imgBtnEliminar");
 
-                int id = Utilerias.StrToInt(gridRoles.DataKeys[e.Row.RowIndex].Values["Id"].ToString());
+                int id = Utilerias.StrToInt(gridPerido.DataKeys[e.Row.RowIndex].Values["Id"].ToString());
 
                 if (imgBtnEliminar != null)
                     imgBtnEliminar.Attributes.Add("onclick", "fnc_ColocarID(" + id + ")");
@@ -81,9 +79,9 @@ namespace SCC.Formas.Catalogos
             }
         }
 
-        protected void gridRoles_PageIndexChanging(object sender, GridViewPageEventArgs e)
+        protected void gridPerido_PageIndexChanging(object sender, GridViewPageEventArgs e)
         {
-            gridRoles.PageIndex = e.NewPageIndex;
+            gridPerido.PageIndex = e.NewPageIndex;
             BindGrid();
             divEncabezado.Style.Add("display", "block");
             divMsgError.Style.Add("display", "none");
@@ -92,8 +90,9 @@ namespace SCC.Formas.Catalogos
 
         protected void imgBtnEdit_Click(object sender, ImageClickEventArgs e)
         {
+
             GridViewRow row = (GridViewRow)((ImageButton)sender).NamingContainer;
-            _IDRol.Value = gridRoles.DataKeys[row.RowIndex].Value.ToString();
+            _IDPeriodo.Value = gridPerido.DataKeys[row.RowIndex].Value.ToString();
             _Accion.Value = "A";
 
             BindControles();
@@ -106,14 +105,14 @@ namespace SCC.Formas.Catalogos
 
         protected void btnGuardar_Click(object sender, EventArgs e)
         {
-            Rol obj;
-            int idTipo = Utilerias.StrToInt(_IDRol.Value);
+            PeriodosDeAmortizacion obj;
+            int id = Utilerias.StrToInt(_IDPeriodo.Value);
             string M = string.Empty;
 
             if (_Accion.Value.Equals("N"))
-                obj = new Rol();
+                obj = new PeriodosDeAmortizacion();
             else
-                obj = uow.RolBL.GetByID(idTipo);
+                obj = uow.PeriodosDeAmortizacionBL.GetByID(id);
 
             if (!ValidarInsercion(txtClave.Value, txtDescripcion.Value, !_Accion.Value.Equals("N") ? obj : null))
             {
@@ -127,17 +126,14 @@ namespace SCC.Formas.Catalogos
                 return;
             }
 
-            //obj.Orden = Utilerias.StrToInt(txtOrden.Value);
+            obj.NMeses = Utilerias.StrToInt(txtNumero.Value);
             obj.Clave = txtClave.Value;
             obj.Nombre = txtDescripcion.Value;
 
-            if (_Accion.Value.Equals("N")){
-                int maximo = uow.RolBL.Get().Max(r => r.Orden);
-                obj.Orden = maximo + 1;
-                uow.RolBL.Insert(obj);
-            }
+            if (_Accion.Value.Equals("N"))
+                uow.PeriodosDeAmortizacionBL.Insert(obj);
             else
-                uow.RolBL.Update(obj);
+                uow.PeriodosDeAmortizacionBL.Update(obj);
 
             uow.SaveChanges();
 
@@ -169,11 +165,11 @@ namespace SCC.Formas.Catalogos
         {
             string M = "Se ha eliminado correctamente";
 
-            int idRol = Utilerias.StrToInt(_IDRol.Value);
+            int id = Utilerias.StrToInt(_IDPeriodo.Value);
 
-            Rol obj = uow.RolBL.GetByID(idRol);
+            PeriodosDeAmortizacion obj = uow.PeriodosDeAmortizacionBL.GetByID(id);
 
-            if (!ValidarEliminarTipo(obj))
+            if (!ValidarEliminar(obj))
             {
                 M = "No se puede eliminar el registro, se encuentra en uso por otros módulos.";
                 lblMsgError.Text = M;
@@ -182,7 +178,7 @@ namespace SCC.Formas.Catalogos
                 return;
             }
 
-            uow.RolBL.Delete(obj);
+            uow.PeriodosDeAmortizacionBL.Delete(obj);
             uow.SaveChanges();
 
             if (uow.Errors.Count > 0) //Si hubo errores
@@ -208,7 +204,5 @@ namespace SCC.Formas.Catalogos
             divCaptura.Style.Add("display", "none");
             divEncabezado.Style.Add("display", "block");
         }
-
-        
     }
 }

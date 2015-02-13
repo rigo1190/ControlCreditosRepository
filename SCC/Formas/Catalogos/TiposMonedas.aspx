@@ -1,5 +1,6 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/NavegadorPrincipal.Master" AutoEventWireup="true" CodeBehind="Roles.aspx.cs" Inherits="SCC.Formas.Catalogos.Roles" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/NavegadorPrincipal.Master" AutoEventWireup="true" CodeBehind="TiposMonedas.aspx.cs" Inherits="SCC.Formas.Catalogos.TiposMonedas" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+
     <script type="text/javascript">
 
         $(document).ready(function () {
@@ -12,7 +13,6 @@
             $("#<%= divEncabezado.ClientID %>").css("display", "none");
             $("#<%= txtDescripcion.ClientID %>").val("");
             $("#<%= txtClave.ClientID %>").val("");
-            <%--$("#<%= txtOrden.ClientID %>").val("");--%>
             $("#<%= _Accion.ClientID %>").val("N");
             $("#<%= divMsgError.ClientID %>").css("display", "none");
             $("#<%= divMsgSuccess.ClientID %>").css("display", "none");
@@ -27,7 +27,7 @@
         }
 
         function fnc_ColocarID(id) {
-            $("#<%= _IDRol.ClientID %>").val(id);
+            $("#<%= _IDMoneda.ClientID %>").val(id);
             $("#<%= divMsgError.ClientID %>").css("display", "none");
             $("#<%= divMsgSuccess.ClientID %>").css("display", "none");
         }
@@ -38,58 +38,32 @@
 
             var valido = true;
 
-             //valido = fnc_ValidarOrden();
-
-             //if (!valido)
-             //    return valido;
-
-             if (nombre == "")
-                 valido = false;
-             else if (clave == "")
-                 valido = false;
-
-             if (!valido) {
-                 $("#<%=lblMsgError.ClientID %>").text("Los datos de Nombre, Clave y Orden no pueden ir vacíos. Intente de nuevo");
-
-                $("#<%= divMsgError.ClientID %>").css("display", "block");
-                $("#<%= divMsgSuccess.ClientID %>").css("display", "none");
-            }
-
-
-            return valido;
-
-        }
-
-        function fnc_ValidarOrden() {
-           <%-- var orden = $("#<%= txtOrden.ClientID %>").val();--%>
-            var valido = true;
-
-            if (!/^([0-9])*[.]?[0-9]*$/.test(orden))
+            if (nombre == "")
                 valido = false;
-
-            if (isNaN(parseInt(orden)))
+            else if (clave == "")
                 valido = false;
 
             if (!valido) {
-                $("#<%= lblMsgError.ClientID %>").text("El campo Orden no es un número válido");
-                $("#<%= divMsgError.ClientID %>").css("display", "block");
-                $("#<%= divMsgSuccess.ClientID %>").css("display", "none");
-            }
+                $("#<%=lblMsgError.ClientID %>").text("Los datos de Nombre, Clave no pueden ir vacíos. Intente de nuevo");
 
-            return valido;
-        }
+                 $("#<%= divMsgError.ClientID %>").css("display", "block");
+                 $("#<%= divMsgSuccess.ClientID %>").css("display", "none");
+             }
 
 
+             return valido;
+
+         }
     </script>
 
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
-    <div class="container">
+     <div class="container">
             <div class="row">
                 <div class="col-lg-12">
                     <div class="alert alert-success alert-dismissable">
-                        <h4><i class="fa fa-crosshairs"></i> <strong>Catálogo de Roles</strong></h4>  
+                        <h4><i class="fa fa-crosshairs"></i> <strong>Catálogo de Tipos de Moneda</strong></h4>  
                     </div>
                 </div>
             </div>
@@ -99,11 +73,11 @@
 
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                             <h3 class="panel-title"><i class="fa"></i> Lista de Roles</h3>
+                             <h3 class="panel-title"><i class="fa"></i> Lista de Tipos de Moneda</h3>
                         </div>
                         <div class="panel-body">
                             <div class="col-lg-12">
-                                <asp:GridView ID="gridRoles" OnRowDataBound="gridRoles_RowDataBound" OnPageIndexChanging="gridRoles_PageIndexChanging" ShowHeaderWhenEmpty="true" DataKeyNames="Id" AllowPaging="true" CssClass="table table-striped table-bordered table-hover" runat="server" AutoGenerateColumns="false" >
+                                <asp:GridView ID="gridMonedas" OnRowDataBound="gridMonedas_RowDataBound" OnPageIndexChanging="gridMonedas_PageIndexChanging" ShowHeaderWhenEmpty="true" DataKeyNames="Id" AllowPaging="true" CssClass="table table-striped table-bordered table-hover" runat="server" AutoGenerateColumns="false" >
                                     <Columns>
                                         <asp:TemplateField HeaderText="Acciones">
                                             <ItemTemplate>
@@ -138,14 +112,10 @@
                 <div class="col-lg-12">
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                            <h3 class="panel-title"><i class="fa"></i>Datos del Rol</h3>
+                            <h3 class="panel-title"><i class="fa"></i>Datos del Tipo de Moneda</h3>
                         </div>
                         <div class="panel-body">
                             <div class="col-lg-12">
-                                <%-- <div class="form-group">
-                                    <label>Orden:</label>
-                                    <input type="number" name="prueba" runat="server" class="form-control" id="txtOrden" />
-                                </div>--%>
                                 <div class="form-group">
                                     <label>Clave:</label>
                                     <input type="text" name="prueba" runat="server" class="form-control" id="txtClave" />
@@ -202,8 +172,9 @@
 
 
     <div runat="server" style="display:none">
-        <input type="hidden" runat="server" id="_IDRol" />
+        <input type="hidden" runat="server" id="_IDMoneda" />
         <input type="hidden" runat="server" id="_Accion" />
     </div>
+
 
 </asp:Content>

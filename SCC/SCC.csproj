@@ -236,7 +236,9 @@
     <Content Include="Default.aspx" />
     <Content Include="favicon.ico" />
     <Content Include="Formas\Catalogos\Municipios_.aspx" />
+    <Content Include="Formas\Catalogos\PeriodosAmortizacion.aspx" />
     <Content Include="Formas\Catalogos\Roles.aspx" />
+    <Content Include="Formas\Catalogos\TiposMonedas.aspx" />
     <Content Include="Formas\Catalogos\UnidadesPresupuestales.aspx" />
     <Content Include="Formas\Catalogos\Usuarios.aspx" />
     <Content Include="Formas\Fideicom\wfAmortizaciones.aspx" />
@@ -405,12 +407,24 @@
     <Compile Include="Formas\Catalogos\Municipios_.aspx.designer.cs">
       <DependentUpon>Municipios_.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Formas\Catalogos\PeriodosAmortizacion.aspx.cs">
+      <DependentUpon>PeriodosAmortizacion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Formas\Catalogos\PeriodosAmortizacion.aspx.designer.cs">
+      <DependentUpon>PeriodosAmortizacion.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Formas\Catalogos\Roles.aspx.cs">
       <DependentUpon>Roles.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Formas\Catalogos\Roles.aspx.designer.cs">
       <DependentUpon>Roles.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Formas\Catalogos\TiposMonedas.aspx.cs">
+      <DependentUpon>TiposMonedas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Formas\Catalogos\TiposMonedas.aspx.designer.cs">
+      <DependentUpon>TiposMonedas.aspx</DependentUpon>
     </Compile>
     <Compile Include="Formas\Catalogos\UnidadesPresupuestales.aspx.cs">
       <DependentUpon>UnidadesPresupuestales.aspx</DependentUpon>

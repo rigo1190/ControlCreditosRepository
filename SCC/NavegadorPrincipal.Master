@@ -100,9 +100,11 @@
                                 <li><a href="<%=ResolveClientUrl("~/Formas/Catalogos/DestinosFinanciamiento.aspx") %>"><span class="glyphicon glyphicon-asterisk"></span> Destinos de Financiamiento</a></li>
                                 <li><a href="<%=ResolveClientUrl("~/Formas/Catalogos/Ejercicios.aspx") %>"><span class="glyphicon glyphicon-asterisk"></span> Ejercicios</a></li>
                                 <li><a href="<%=ResolveClientUrl("~/Formas/Catalogos/UnidadesPresupuestales.aspx") %>"><span class="glyphicon glyphicon-asterisk"></span> Unidades Presupuestales</a></li>
-                                <li><a href="<%=ResolveClientUrl("~/Formas/Catalogos/Departamento.aspx") %>"><span class="glyphicon glyphicon-asterisk"></span> Areas/Departamentos</a></li>
+                                <li><a href="<%=ResolveClientUrl("~/Formas/Catalogos/Departamento.aspx") %>"><span class="glyphicon glyphicon-asterisk"></span> Áreas/Departamentos</a></li>
                                 <li><a href="<%=ResolveClientUrl("~/Formas/Catalogos/Financiera.aspx") %>"><span class="glyphicon glyphicon-asterisk"></span> Financieras</a></li>
                                 <li><a href="<%=ResolveClientUrl("~/Formas/Catalogos/Firma.aspx") %>"><span class="glyphicon glyphicon-asterisk"></span> Firmas</a></li>
+                                <li><a href="<%=ResolveClientUrl("~/Formas/Catalogos/TiposMonedas.aspx") %>"><span class="glyphicon glyphicon-asterisk"></span> Tipos de Moneda</a></li>
+                                <li><a href="<%=ResolveClientUrl("~/Formas/Catalogos/PeriodosAmortizacion.aspx") %>"><span class="glyphicon glyphicon-asterisk"></span> Periodos de Amortización</a></li>
                                 <li><a href="<%=ResolveClientUrl("~/Formas/Catalogos/Roles.aspx") %>"><span class="glyphicon glyphicon-asterisk"></span> Roles de Usuario</a></li>
                                 <li><a href="<%=ResolveClientUrl("~/Formas/Catalogos/Usuarios.aspx") %>"><span class="glyphicon glyphicon-asterisk"></span> Usuarios</a></li>
                                 <li><a href="<%=ResolveClientUrl("~/Formas/Hash.aspx") %>"><span class="glyphicon glyphicon-asterisk"></span> Hash</a></li>

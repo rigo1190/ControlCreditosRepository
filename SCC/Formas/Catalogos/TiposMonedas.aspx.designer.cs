@@ -10,7 +10,7 @@
 namespace SCC.Formas.Catalogos {
     
     
-    public partial class Roles {
+    public partial class TiposMonedas {
         
         /// <summary>
         /// Control divEncabezado.
@@ -22,13 +22,13 @@ namespace SCC.Formas.Catalogos {
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl divEncabezado;
         
         /// <summary>
-        /// Control gridRoles.
+        /// Control gridMonedas.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView gridRoles;
+        protected global::System.Web.UI.WebControls.GridView gridMonedas;
         
         /// <summary>
         /// Control divCaptura.
@@ -112,13 +112,13 @@ namespace SCC.Formas.Catalogos {
         protected global::System.Web.UI.WebControls.Button btnDel;
         
         /// <summary>
-        /// Control _IDRol.
+        /// Control _IDMoneda.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputHidden _IDRol;
+        protected global::System.Web.UI.HtmlControls.HtmlInputHidden _IDMoneda;
         
         /// <summary>
         /// Control _Accion.

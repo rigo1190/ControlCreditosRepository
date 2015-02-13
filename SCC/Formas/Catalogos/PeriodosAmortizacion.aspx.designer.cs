@@ -10,7 +10,7 @@
 namespace SCC.Formas.Catalogos {
     
     
-    public partial class Roles {
+    public partial class PeriodosAmortizacion {
         
         /// <summary>
         /// Control divEncabezado.
@@ -22,13 +22,13 @@ namespace SCC.Formas.Catalogos {
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl divEncabezado;
         
         /// <summary>
-        /// Control gridRoles.
+        /// Control gridPerido.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView gridRoles;
+        protected global::System.Web.UI.WebControls.GridView gridPerido;
         
         /// <summary>
         /// Control divCaptura.
@@ -56,6 +56,15 @@ namespace SCC.Formas.Catalogos {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlTextArea txtDescripcion;
+        
+        /// <summary>
+        /// Control txtNumero.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl txtNumero;
         
         /// <summary>
         /// Control btnGuardar.
@@ -112,13 +121,13 @@ namespace SCC.Formas.Catalogos {
         protected global::System.Web.UI.WebControls.Button btnDel;
         
         /// <summary>
-        /// Control _IDRol.
+        /// Control _IDPeriodo.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputHidden _IDRol;
+        protected global::System.Web.UI.HtmlControls.HtmlInputHidden _IDPeriodo;
         
         /// <summary>
         /// Control _Accion.
