@@ -32,63 +32,26 @@ namespace SCC
         {
            
             string strlogin = hiddenLogin.Value;
-            string strContrasena = hiddenContrasena.Value;
+            string strContrasena = Encriptar(hiddenContrasena.Value);
 
             var user = uow.UsuarioBL.Get(u => u.Login == strlogin && u.Password == strContrasena).FirstOrDefault();
 
             if (user!=null)
             {                                               
                         
-                        Session.Timeout = 60;
-                        Session["IsAuthenticated"] = true;
-                        Session["NombreUsuario"] = user.Nombre;
-                        Session["Login"] = user.Login;
-                        Session["IdUser"] = user.Id.ToString();
+                Session.Timeout = 60;
+                Session["IsAuthenticated"] = true;
+                Session["NombreUsuario"] = user.Nombre;
+                Session["Login"] = user.Login;
+                Session["IdUser"] = user.Id.ToString();
 
-                        //UsuarioRol usuarioRol=user.DetalleRoles.FirstOrDefault();
-
-
-
-                        Session["EjercicioId"] = ejercicioActivoId;
-                        Session["MunicipioId"] = 3;
-                        Response.Redirect("~/Formas/fideicom/wfFideicomisos.aspx");
-                        
-
-                        //switch (user.RolId) 
-                        //{
-                        //    case 1: //Desarrollador
-
-                        //        break;
-
-                        //    case 2: //Ejecutivo
-
-                        //        break;
-
-                        //    case 3: //Administrador
-
-                        //        Response.Redirect("~/Formas/frmSelectorEjercicio.aspx");
-                        //        break;
-
-                        //    case 4: //Capturista
+                //UsuarioRol usuarioRol=user.DetalleRoles.FirstOrDefault();
 
 
-                        //        Session["EjercicioId"] = ejercicioActivoId;     
-                        //        Response.Redirect("~/Formas/Catalogos/Municipios.aspx");
-                        //        break;
-
-                        //    case 5: //Analista
-
-                        //        Session["EjercicioId"] = ejercicioActivoId;     
-                        //        Response.Redirect("~/Formas/Catalogos/Municipios.aspx");
-                        //        break;
-
-                        //    default:
-
-                        //        break;
-
-                        //}
-
-                      
+                Session["EjercicioId"] = ejercicioActivoId;
+                Session["MunicipioId"] = 3;
+                Response.Redirect("~/Inicio.aspx");
+  
             }
 
             else

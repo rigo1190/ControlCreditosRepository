@@ -168,6 +168,7 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\datepicker.css" />
     <Content Include="Content\Site.css" />
+    <Content Include="Content\StyleFondo.css" />
     <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
     <Content Include="Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
     <Content Include="Content\themes\base\images\ui-bg_glass_55_fbf9ee_1x400.png" />
@@ -223,24 +224,37 @@
     <Content Include="Content\themes\base\minified\jquery.ui.tabs.min.css" />
     <Content Include="Content\themes\base\minified\jquery.ui.theme.min.css" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Formas\Catalogos\Departamento.aspx" />
+    <Content Include="Formas\Catalogos\DestinosFinanciamiento.aspx" />
+    <Content Include="Formas\Catalogos\Ejercicios.aspx" />
+    <Content Include="Formas\Catalogos\Financiera.aspx" />
+    <Content Include="Formas\Catalogos\Firma.aspx" />
+    <Content Include="Formas\Catalogos\FuentesFinanciamiento.aspx" />
     <Content Include="Formas\Catalogos\Municipios.aspx" />
     <Content Include="Default.aspx" />
     <Content Include="favicon.ico" />
+    <Content Include="Formas\Catalogos\Municipios_.aspx" />
+    <Content Include="Formas\Catalogos\Roles.aspx" />
+    <Content Include="Formas\Catalogos\UnidadesPresupuestales.aspx" />
+    <Content Include="Formas\Catalogos\Usuarios.aspx" />
     <Content Include="Formas\Fideicom\wfAmortizaciones.aspx" />
     <Content Include="Formas\Fideicom\wfAmortizacionesNew.aspx" />
     <Content Include="Formas\Fideicom\wfCreditos.aspx" />
     <Content Include="Formas\Fideicom\wfFideicomisos.aspx" />
+    <Content Include="Formas\Hash.aspx" />
     <Content Include="Global.asax" />
     <Content Include="img\cge.jpg" />
     <Content Include="img\close.png" />
     <Content Include="img\edit1.png" />
     <Content Include="img\Enviar.png" />
+    <Content Include="img\fondo.jpg" />
     <Content Include="img\img_reportes.png" />
     <Content Include="img\lista.png" />
     <Content Include="img\magnifier.png" />
     <Content Include="img\photo.png" />
     <Content Include="img\Reporte.png" />
     <Content Include="img\Sub.png" />
+    <Content Include="Inicio.aspx" />
     <Content Include="Login.aspx" />
     <Content Include="packages.config" />
     <Content Include="MLogin.Master" />
@@ -331,12 +345,82 @@
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Formas\Catalogos\Departamento.aspx.cs">
+      <DependentUpon>Departamento.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Formas\Catalogos\Departamento.aspx.designer.cs">
+      <DependentUpon>Departamento.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Formas\Catalogos\DestinosFinanciamiento.aspx.cs">
+      <DependentUpon>DestinosFinanciamiento.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Formas\Catalogos\DestinosFinanciamiento.aspx.designer.cs">
+      <DependentUpon>DestinosFinanciamiento.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Formas\Catalogos\Ejercicios.aspx.cs">
+      <DependentUpon>Ejercicios.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Formas\Catalogos\Ejercicios.aspx.designer.cs">
+      <DependentUpon>Ejercicios.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Formas\Catalogos\Financiera.aspx.cs">
+      <DependentUpon>Financiera.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Formas\Catalogos\Financiera.aspx.designer.cs">
+      <DependentUpon>Financiera.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Formas\Catalogos\Firma.aspx.cs">
+      <DependentUpon>Firma.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Formas\Catalogos\Firma.aspx.designer.cs">
+      <DependentUpon>Firma.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Formas\Catalogos\FuentesFinanciamiento.aspx.cs">
+      <DependentUpon>FuentesFinanciamiento.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Formas\Catalogos\FuentesFinanciamiento.aspx.designer.cs">
+      <DependentUpon>FuentesFinanciamiento.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Formas\Catalogos\Municipios.aspx.cs">
       <DependentUpon>Municipios.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Formas\Catalogos\Municipios.aspx.designer.cs">
       <DependentUpon>Municipios.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Formas\Catalogos\Municipios_.aspx.cs">
+      <DependentUpon>Municipios_.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Formas\Catalogos\Municipios_.aspx.designer.cs">
+      <DependentUpon>Municipios_.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Formas\Catalogos\Roles.aspx.cs">
+      <DependentUpon>Roles.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Formas\Catalogos\Roles.aspx.designer.cs">
+      <DependentUpon>Roles.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Formas\Catalogos\UnidadesPresupuestales.aspx.cs">
+      <DependentUpon>UnidadesPresupuestales.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Formas\Catalogos\UnidadesPresupuestales.aspx.designer.cs">
+      <DependentUpon>UnidadesPresupuestales.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Formas\Catalogos\Usuarios.aspx.cs">
+      <DependentUpon>Usuarios.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Formas\Catalogos\Usuarios.aspx.designer.cs">
+      <DependentUpon>Usuarios.aspx</DependentUpon>
     </Compile>
     <Compile Include="Formas\Fideicom\wfAmortizaciones.aspx.cs">
       <DependentUpon>wfAmortizaciones.aspx</DependentUpon>
@@ -366,8 +450,22 @@
     <Compile Include="Formas\Fideicom\wfFideicomisos.aspx.designer.cs">
       <DependentUpon>wfFideicomisos.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Formas\Hash.aspx.cs">
+      <DependentUpon>Hash.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Formas\Hash.aspx.designer.cs">
+      <DependentUpon>Hash.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Inicio.aspx.cs">
+      <DependentUpon>Inicio.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Inicio.aspx.designer.cs">
+      <DependentUpon>Inicio.aspx</DependentUpon>
     </Compile>
     <Compile Include="Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>
@@ -472,7 +570,7 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>7918</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:7920/</IISUrl>
+          <IISUrl>http://localhost:7912/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

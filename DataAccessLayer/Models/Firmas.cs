@@ -20,6 +20,9 @@ namespace DataAccessLayer.Models
         [StringLength(255, ErrorMessage = "El campo {0} debe contener un máximo de {1} caracteres")]
         public string JefeDeptoOrdenesDePago { get; set; }
 
+        [StringLength(255, ErrorMessage = "El campo {0} debe contener un máximo de {1} caracteres")]
+        public string DirectorGeneral { get; set; }
+
 
     }
 }
